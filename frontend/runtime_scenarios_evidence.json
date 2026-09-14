@@ -1,0 +1,121 @@
+[
+  {
+    "id": "SCENARIO-A1",
+    "name": "Fresh visitor state initialization without token",
+    "status": "PASS",
+    "evidence": "token=null, isAuthenticated=false, isLoading=false",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-A2",
+    "name": "Root route (/) resolution for unauthenticated visitor",
+    "status": "PASS",
+    "evidence": "Resolved destination: /login",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-A3",
+    "name": "Protected route (/dashboard) resolution for unauthenticated visitor",
+    "status": "PASS",
+    "evidence": "Resolved destination: /login",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-B1",
+    "name": "Session restoration with valid token",
+    "status": "PASS",
+    "evidence": "user=Alex Rivera, isAuthenticated=true, isLoading=false",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-B2",
+    "name": "Root route (/) resolution for authenticated student",
+    "status": "PASS",
+    "evidence": "Resolved destination: /dashboard",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-C1",
+    "name": "Token eviction and auth reset on HTTP 401 during restore",
+    "status": "PASS",
+    "evidence": "localStorage token purged, isAuthenticated=false",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-C2",
+    "name": "Root route (/) resolution after 401 token purge",
+    "status": "PASS",
+    "evidence": "Resolved destination: /login",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-D1",
+    "name": "Deterministic error state when backend is offline during session restore",
+    "status": "PASS",
+    "evidence": "sessionError=\"Cannot connect to college backend server. Please verify FastAPI is running on port 8000.\", isAuthenticated=false",
+    "details": ""
+  },
+  {
+    "id": "SCENARIO-D2",
+    "name": "Root route (/) renders visible notice card (NEVER blank screen) when backend offline",
+    "status": "PASS",
+    "evidence": "Rendered view: BACKEND_CONNECTION_NOTICE_CARD",
+    "details": ""
+  },
+  {
+    "id": "DASH-STATE-01",
+    "name": "Dashboard computation with empty array []",
+    "status": "PASS",
+    "evidence": "Total=0, InProgress=0, Resolved=0",
+    "details": ""
+  },
+  {
+    "id": "DASH-STATE-02",
+    "name": "Dashboard computation with populated records",
+    "status": "PASS",
+    "evidence": "Total=3, InProgress=1, Resolved=1, Action=1",
+    "details": ""
+  },
+  {
+    "id": "DASH-STATE-03",
+    "name": "Dashboard immunity against non-array / corrupted response shapes",
+    "status": "PASS",
+    "evidence": "didCrash=false, safely defaulted to total=0",
+    "details": ""
+  },
+  {
+    "id": "CONTRACT-F1",
+    "name": "requestService.getRequests passes through direct Array response",
+    "status": "PASS",
+    "evidence": "Returned array length: 2",
+    "details": ""
+  },
+  {
+    "id": "CONTRACT-F2",
+    "name": "requestService.getRequests normalizes { requests: [...] } envelope into Array",
+    "status": "PASS",
+    "evidence": "Extracted array from envelope length: 1",
+    "details": ""
+  },
+  {
+    "id": "CONTRACT-F3",
+    "name": "requestService.getRequests normalizes { data: [...] } envelope into Array",
+    "status": "PASS",
+    "evidence": "Extracted array from data envelope length: 1",
+    "details": ""
+  },
+  {
+    "id": "CONTRACT-F4",
+    "name": "requestService.getRequests rejects malformed/non-array response with ApiError",
+    "status": "PASS",
+    "evidence": "Caught expected error: \"Invalid response shape from /api/requests: Expected an array of student requests\"",
+    "details": ""
+  },
+  {
+    "id": "CONTRACT-F5",
+    "name": "useRequests state guarantees requests is Array and error is set when API is malformed",
+    "status": "PASS",
+    "evidence": "requests is Array(0), error=\"Invalid response shape from /api/requests: Expected an array of student requests\", loading=false",
+    "details": ""
+  }
+]

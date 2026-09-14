@@ -1,0 +1,158 @@
+{
+  "build": null,
+  "staticAudit": {
+    "counts": {
+      "mock": 0,
+      "mockData": 0,
+      "mockTransport": 0,
+      "sampleData": 0,
+      "demo": 0,
+      "fake": 0,
+      "Alex Morgan": 0,
+      "21CS042": 0,
+      "REQ-": 0,
+      "password123": 0,
+      "localhost:8000": 0,
+      "setTransport": 0,
+      "fallback request data": 0
+    },
+    "details": {
+      "mock": [],
+      "mockData": [],
+      "mockTransport": [],
+      "sampleData": [],
+      "demo": [],
+      "fake": [],
+      "Alex Morgan": [],
+      "21CS042": [],
+      "REQ-": [],
+      "password123": [],
+      "localhost:8000": [],
+      "setTransport": [],
+      "fallback request data": []
+    },
+    "scannedFilesCount": 39
+  },
+  "contractTests": [
+    {
+      "id": "AUTH-01",
+      "name": "POST /api/auth/register contract & request construction",
+      "status": "PASS"
+    },
+    {
+      "id": "AUTH-02",
+      "name": "POST /api/auth/login contract & token extraction",
+      "status": "PASS"
+    },
+    {
+      "id": "AUTH-03",
+      "name": "GET /api/auth/me Bearer header injection & user retrieval",
+      "status": "PASS"
+    },
+    {
+      "id": "AUTH-04",
+      "name": "authService.logout clears token store",
+      "status": "PASS"
+    },
+    {
+      "id": "STUDENT-01",
+      "name": "GET /api/students/{id} URL encoding & execution",
+      "status": "PASS"
+    },
+    {
+      "id": "REQ-01",
+      "name": "POST /api/requests contract payload validation & construction",
+      "status": "PASS"
+    },
+    {
+      "id": "REQ-02",
+      "name": "requestService.createRequest client-side validation failure",
+      "status": "PASS"
+    },
+    {
+      "id": "REQ-03",
+      "name": "GET /api/requests query parameters & serialization",
+      "status": "PASS"
+    },
+    {
+      "id": "REQ-04",
+      "name": "GET /api/requests/{id} single record retrieval",
+      "status": "PASS"
+    },
+    {
+      "id": "REQ-05",
+      "name": "PATCH /api/requests/{id}/status update payload & method",
+      "status": "PASS"
+    },
+    {
+      "id": "UPLOAD-01",
+      "name": "POST /api/upload FormData boundary preservation",
+      "status": "PASS"
+    },
+    {
+      "id": "ERR-400",
+      "name": "HTTP 400 Bad Request error normalization",
+      "status": "PASS"
+    },
+    {
+      "id": "ERR-401",
+      "name": "HTTP 401 Unauthorized error normalization",
+      "status": "PASS"
+    },
+    {
+      "id": "ERR-404",
+      "name": "HTTP 404 Not Found error normalization",
+      "status": "PASS"
+    },
+    {
+      "id": "ERR-422",
+      "name": "HTTP 422 Unprocessable Entity FastAPI detail array flattening",
+      "status": "PASS"
+    },
+    {
+      "id": "ERR-500",
+      "name": "HTTP 500 Internal Server Error normalization",
+      "status": "PASS"
+    },
+    {
+      "id": "ERR-NET",
+      "name": "Network failure / connection refused error normalization",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-DASH-01",
+      "name": "Dashboard statistics with empty API response []",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-DASH-02",
+      "name": "Dashboard statistics dynamic calculation with API records",
+      "status": "PASS"
+    },
+    {
+      "id": "UI-HIST-01",
+      "name": "History search, filter, and sort logic",
+      "status": "PASS"
+    },
+    {
+      "id": "ROUTE-01",
+      "name": "Verify root route (/) is session-aware and does NOT blindly redirect to /dashboard",
+      "status": "PASS"
+    },
+    {
+      "id": "ROUTE-02",
+      "name": "Verify ProtectedRoute removes development bypasses",
+      "status": "PASS"
+    },
+    {
+      "id": "ROUTE-03",
+      "name": "Verify route aliases /new-request and /history exist",
+      "status": "PASS"
+    }
+  ],
+  "routingTests": [],
+  "liveFastApi": {
+    "running": false,
+    "error": "fetch failed"
+  }
+}
